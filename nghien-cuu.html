@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nghiên Cứu Khoa Học - EduNews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-top"><div class="container"><div class="header-top-left"><span><i class="fas fa-phone"></i> 1900 1234</span></div></div></div>
+        <div class="header-main">
+            <div class="container">
+                <a href="index.html" class="logo"><i class="fas fa-graduation-cap"></i><div class="logo-text"><span class="logo-name">Edu<strong>News</strong></span><span class="logo-slogan">Khoa CNTT</span></div></a>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Trang Chủ</a></li>
+                        <li class="nav-item"><a href="tintuc.html" class="nav-link"><i class="fas fa-newspaper"></i> Tin Tức</a></li>
+                        <li class="nav-item"><a href="dao-tao.html" class="nav-link"><i class="fas fa-book"></i> Đào Tạo</a></li>
+                        <li class="nav-item"><a href="nghien-cuu.html" class="nav-link active"><i class="fas fa-flask"></i> Nghiên Cứu</a></li>
+                        <li class="nav-item"><a href="admin.html" class="nav-link"><i class="fas fa-cog"></i> Quản Lý</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+                    <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn"><span></span><span></span><span></span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-banner" style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1920')">
+        <div class="page-banner-overlay"></div>
+        <div class="container">
+            <div class="page-banner-content">
+                <nav class="breadcrumb"><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a><span>/</span><span>Nghiên Cứu</span></nav>
+                <h1 class="page-title"><i class="fas fa-flask"></i> Nghiên Cứu Khoa Học</h1>
+                <p class="page-subtitle">Các hoạt động nghiên cứu và công bố khoa học của Khoa</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="main">
+        <div class="container">
+            <!-- Research Areas -->
+            <section class="section">
+                <div class="section-header"><h2 class="section-title"><i class="fas fa-microscope"></i> Lĩnh Vực Nghiên Cứu</h2></div>
+                <div class="research-areas-grid">
+                    <div class="research-area-card">
+                        <div class="area-icon"><i class="fas fa-brain"></i></div>
+                        <h3>Trí Tuệ Nhân Tạo</h3>
+                        <p>Machine Learning, Deep Learning, Computer Vision, NLP</p>
+                        <div class="area-stats">
+                            <span><i class="fas fa-file-alt"></i> 45 công bố</span>
+                            <span><i class="fas fa-users"></i> 12 giảng viên</span>
+                        </div>
+                    </div>
+                    <div class="research-area-card">
+                        <div class="area-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>An Toàn Thông Tin</h3>
+                        <p>Cryptography, Network Security, Blockchain</p>
+                        <div class="area-stats">
+                            <span><i class="fas fa-file-alt"></i> 32 công bố</span>
+                            <span><i class="fas fa-users"></i> 8 giảng viên</span>
+                        </div>
+                    </div>
+                    <div class="research-area-card">
+                        <div class="area-icon"><i class="fas fa-database"></i></div>
+                        <h3>Khoa Học Dữ Liệu</h3>
+                        <p>Big Data, Data Mining, Business Intelligence</p>
+                        <div class="area-stats">
+                            <span><i class="fas fa-file-alt"></i> 28 công bố</span>
+                            <span><i class="fas fa-users"></i> 10 giảng viên</span>
+                        </div>
+                    </div>
+                    <div class="research-area-card">
+                        <div class="area-icon"><i class="fas fa-cloud"></i></div>
+                        <h3>Điện Toán Đám Mây</h3>
+                        <p>Cloud Computing, IoT, Distributed Systems</p>
+                        <div class="area-stats">
+                            <span><i class="fas fa-file-alt"></i> 25 công bố</span>
+                            <span><i class="fas fa-users"></i> 7 giảng viên</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latest Publications -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="fas fa-book-open"></i> Công Bố Mới Nhất</h2>
+                </div>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="pub-year">2026</div>
+                        <div class="pub-content">
+                            <h4>Deep Learning for Vietnamese Text Classification</h4>
+                            <p class="pub-authors">Nguyễn Văn A, Trần Thị B, Lê Văn C</p>
+                            <p class="pub-journal"><i class="fas fa-journal-whills"></i> Journal of Machine Learning Research</p>
+                        </div>
+                        <span class="pub-type">Q1</span>
+                    </div>
+                    <div class="publication-item">
+                        <div class="pub-year">2026</div>
+                        <div class="pub-content">
+                            <h4>Blockchain-based Academic Certificate Verification System</h4>
+                            <p class="pub-authors">Phạm Văn D, Hoàng Thị E</p>
+                            <p class="pub-journal"><i class="fas fa-journal-whills"></i> IEEE Access</p>
+                        </div>
+                        <span class="pub-type">Q1</span>
+                    </div>
+                    <div class="publication-item">
+                        <div class="pub-year">2025</div>
+                        <div class="pub-content">
+                            <h4>IoT Security Framework for Smart Campus</h4>
+                            <p class="pub-authors">Nguyễn Văn F, Lê Thị G</p>
+                            <p class="pub-journal"><i class="fas fa-journal-whills"></i> Computers & Security</p>
+                        </div>
+                        <span class="pub-type">Q1</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research News -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="fas fa-newspaper"></i> Tin Nghiên Cứu</h2>
+                    <a href="tintuc.html?cat=nghien-cuu" class="section-link">Xem tất cả</a>
+                </div>
+                <div class="news-grid" id="researchNewsGrid"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 EduNews - Khoa CNTT. By JSB_Khang</p></div></div></footer>
+
+    <div class="chatbot-container" id="chatbot">
+        <button class="chatbot-toggle" id="chatbotToggle"><i class="fas fa-robot"></i><span class="chatbot-pulse"></span></button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header"><div class="chatbot-avatar"><i class="fas fa-robot"></i></div><div class="chatbot-info"><h4>EduBot AI</h4><span class="chatbot-status"><i class="fas fa-circle"></i> Online</span></div><button class="chatbot-close" id="chatbotClose"><i class="fas fa-times"></i></button></div>
+            <div class="chatbot-messages" id="chatbotMessages"><div class="chat-message bot"><div class="message-content"><p>Bạn muốn tìm hiểu về nghiên cứu khoa học? 🔬</p></div></div></div>
+            <form class="chatbot-input" id="chatbotForm"><input type="text" placeholder="Nhập câu hỏi..." id="chatbotInput"><button type="submit"><i class="fas fa-paper-plane"></i></button></form>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox"><button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button><img src="" alt="" class="lightbox-img" id="lightboxImg"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { loadResearchPage(); });</script>
+</body>
+</html>

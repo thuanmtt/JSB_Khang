@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Tin Tức - EduNews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="admin-body">
+    <header class="header admin-header" id="header">
+        <div class="header-main">
+            <div class="container">
+                <a href="index.html" class="logo"><i class="fas fa-graduation-cap"></i><div class="logo-text"><span class="logo-name">Edu<strong>News</strong></span><span class="logo-slogan">Admin Panel</span></div></a>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Trang Chủ</a></li>
+                        <li class="nav-item"><a href="tintuc.html" class="nav-link"><i class="fas fa-newspaper"></i> Tin Tức</a></li>
+                        <li class="nav-item"><a href="admin.html" class="nav-link active"><i class="fas fa-cog"></i> Quản Lý</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn"><span></span><span></span><span></span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main admin-main">
+        <div class="container">
+            <div class="admin-header-section">
+                <h1 class="admin-title"><i class="fas fa-tachometer-alt"></i> CMS Quản Lý Tin Tức</h1>
+                <p class="admin-subtitle">Thêm, sửa, xóa bài viết tin tức trường học</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <div class="stat-icon thong-bao"><i class="fas fa-bullhorn"></i></div>
+                    <div class="stat-info"><span class="stat-number" id="thongbaoCount">0</span><span class="stat-label">Thông Báo</span></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon su-kien"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="stat-info"><span class="stat-number" id="sukienCount">0</span><span class="stat-label">Sự Kiện</span></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon hoc-bong"><i class="fas fa-award"></i></div>
+                    <div class="stat-info"><span class="stat-number" id="hocbongCount">0</span><span class="stat-label">Học Bổng</span></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon total"><i class="fas fa-eye"></i></div>
+                    <div class="stat-info"><span class="stat-number" id="totalViews">0</span><span class="stat-label">Lượt Xem</span></div>
+                </div>
+            </div>
+
+            <div class="admin-layout">
+                <!-- Form Section -->
+                <div class="admin-form-section">
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h2 id="formTitle"><i class="fas fa-plus-circle"></i> Thêm Bài Viết Mới</h2>
+                        </div>
+                        <form class="article-form" id="articleForm">
+                            <input type="hidden" id="articleId">
+                            <div class="form-group">
+                                <label for="title"><i class="fas fa-heading"></i> Tiêu Đề *</label>
+                                <input type="text" id="title" placeholder="Nhập tiêu đề bài viết..." required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="type"><i class="fas fa-list"></i> Loại *</label>
+                                    <select id="type" required>
+                                        <option value="thong-bao">Thông Báo</option>
+                                        <option value="su-kien">Sự Kiện</option>
+                                        <option value="hoc-bong">Học Bổng</option>
+                                        <option value="tuyen-sinh">Tuyển Sinh</option>
+                                        <option value="dao-tao">Đào Tạo</option>
+                                        <option value="nghien-cuu">Nghiên Cứu</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="priority"><i class="fas fa-star"></i> Độ Ưu Tiên</label>
+                                    <select id="priority">
+                                        <option value="normal">Bình thường</option>
+                                        <option value="important">Quan trọng</option>
+                                        <option value="urgent">Khẩn cấp</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="image"><i class="fas fa-image"></i> URL Hình Ảnh *</label>
+                                <input type="url" id="image" placeholder="https://example.com/image.jpg" required>
+                                <div class="image-preview" id="imagePreview"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="excerpt"><i class="fas fa-align-left"></i> Mô Tả Ngắn *</label>
+                                <textarea id="excerpt" rows="2" placeholder="Mô tả ngắn gọn về nội dung..." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="content"><i class="fas fa-file-alt"></i> Nội Dung Chi Tiết *</label>
+                                <textarea id="content" rows="8" placeholder="Nội dung chi tiết của bài viết..." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="tags"><i class="fas fa-tags"></i> Tags (cách nhau bởi dấu phẩy)</label>
+                                <input type="text" id="tags" placeholder="tuyensinh, hocbong, sukien...">
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> <span id="submitText">Thêm Bài Viết</span></button>
+                                <button type="button" class="btn btn-outline" id="resetFormBtn" style="display:none"><i class="fas fa-times"></i> Hủy</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- List Section -->
+                <div class="admin-list-section">
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h2><i class="fas fa-list"></i> Danh Sách Bài Viết</h2>
+                            <div class="filter-tabs">
+                                <button class="filter-tab active" data-filter="all">Tất cả</button>
+                                <button class="filter-tab" data-filter="thong-bao">Thông Báo</button>
+                                <button class="filter-tab" data-filter="su-kien">Sự Kiện</button>
+                                <button class="filter-tab" data-filter="hoc-bong">Học Bổng</button>
+                            </div>
+                        </div>
+                        <div class="articles-list" id="articlesList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Delete Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <div class="modal-icon warning"><i class="fas fa-exclamation-triangle"></i></div>
+            <h3>Xác Nhận Xóa</h3>
+            <p>Bạn có chắc chắn muốn xóa bài viết này? Hành động này không thể hoàn tác.</p>
+            <div class="modal-actions">
+                <button class="btn btn-outline" id="cancelDelete">Hủy</button>
+                <button class="btn btn-danger" id="confirmDelete"><i class="fas fa-trash"></i> Xóa</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Thao tác thành công!</span>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

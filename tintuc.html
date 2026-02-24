@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Tức - EduNews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-left"><span><i class="fas fa-phone"></i> 1900 1234</span><span><i class="fas fa-envelope"></i> contact@edunews.edu.vn</span></div>
+                <div class="header-top-right"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <a href="index.html" class="logo"><i class="fas fa-graduation-cap"></i><div class="logo-text"><span class="logo-name">Edu<strong>News</strong></span><span class="logo-slogan">Khoa CNTT</span></div></a>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Trang Chủ</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="tintuc.html" class="nav-link active"><i class="fas fa-newspaper"></i> Tin Tức <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="tintuc.html?cat=thong-bao"><i class="fas fa-bullhorn"></i> Thông Báo</a></li>
+                                <li><a href="tintuc.html?cat=su-kien"><i class="fas fa-calendar-alt"></i> Sự Kiện</a></li>
+                                <li><a href="tintuc.html?cat=hoc-bong"><i class="fas fa-award"></i> Học Bổng</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="dao-tao.html" class="nav-link"><i class="fas fa-book"></i> Đào Tạo</a></li>
+                        <li class="nav-item"><a href="nghien-cuu.html" class="nav-link"><i class="fas fa-flask"></i> Nghiên Cứu</a></li>
+                        <li class="nav-item"><a href="admin.html" class="nav-link"><i class="fas fa-cog"></i> Quản Lý</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+                    <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn"><span></span><span></span><span></span></button>
+                </div>
+            </div>
+        </div>
+        <div class="search-modal" id="searchModal"><div class="search-modal-content"><input type="text" placeholder="Tìm kiếm..." class="search-input" id="searchInput"><button class="search-close" id="searchClose"><i class="fas fa-times"></i></button></div></div>
+    </header>
+
+    <section class="page-banner" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920')">
+        <div class="page-banner-overlay"></div>
+        <div class="container">
+            <div class="page-banner-content">
+                <nav class="breadcrumb"><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a><span>/</span><span>Tin Tức</span></nav>
+                <h1 class="page-title"><i class="fas fa-newspaper"></i> Tin Tức & Thông Báo</h1>
+                <p class="page-subtitle">Cập nhật tin tức mới nhất từ Khoa CNTT</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-tabs">
+        <div class="container">
+            <div class="tabs-grid">
+                <a href="tintuc.html" class="tab-card active" data-cat="all"><i class="fas fa-th-large"></i><span>Tất Cả</span></a>
+                <a href="tintuc.html?cat=thong-bao" class="tab-card"><i class="fas fa-bullhorn"></i><span>Thông Báo</span></a>
+                <a href="tintuc.html?cat=su-kien" class="tab-card"><i class="fas fa-calendar-alt"></i><span>Sự Kiện</span></a>
+                <a href="tintuc.html?cat=hoc-bong" class="tab-card"><i class="fas fa-award"></i><span>Học Bổng</span></a>
+                <a href="tintuc.html?cat=tuyen-sinh" class="tab-card"><i class="fas fa-user-graduate"></i><span>Tuyển Sinh</span></a>
+            </div>
+        </div>
+    </section>
+
+    <main class="main">
+        <div class="container">
+            <div class="page-layout">
+                <aside class="sidebar">
+                    <div class="sidebar-card">
+                        <h3><i class="fas fa-fire"></i> Tin Nổi Bật</h3>
+                        <div class="hot-articles" id="hotArticles"></div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h3><i class="fas fa-calendar"></i> Lịch Sự Kiện</h3>
+                        <div class="calendar-widget" id="calendarWidget"></div>
+                    </div>
+                    <div class="sidebar-card tags-card">
+                        <h3><i class="fas fa-tags"></i> Tags</h3>
+                        <div class="tags-cloud">
+                            <a href="#" class="tag">#tuyensinh</a>
+                            <a href="#" class="tag">#hocbong</a>
+                            <a href="#" class="tag">#sukien</a>
+                            <a href="#" class="tag">#CNTT</a>
+                            <a href="#" class="tag">#doantn</a>
+                        </div>
+                    </div>
+                </aside>
+                <div class="content-area">
+                    <div class="content-header">
+                        <div class="results-count"><span id="resultsCount">0</span> bài viết</div>
+                        <div class="sort-options">
+                            <select id="sortSelect"><option value="newest">Mới nhất</option><option value="popular">Phổ biến</option></select>
+                        </div>
+                    </div>
+                    <div class="news-list-grid" id="newsGrid"></div>
+                    <div class="pagination" id="pagination"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom"><p>&copy; 2026 EduNews - Khoa CNTT. By JSB_Khang</p></div>
+        </div>
+    </footer>
+
+    <div class="chatbot-container" id="chatbot">
+        <button class="chatbot-toggle" id="chatbotToggle"><i class="fas fa-robot"></i><span class="chatbot-pulse"></span></button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header"><div class="chatbot-avatar"><i class="fas fa-robot"></i></div><div class="chatbot-info"><h4>EduBot AI</h4><span class="chatbot-status"><i class="fas fa-circle"></i> Online</span></div><button class="chatbot-close" id="chatbotClose"><i class="fas fa-times"></i></button></div>
+            <div class="chatbot-messages" id="chatbotMessages"><div class="chat-message bot"><div class="message-content"><p>Bạn cần hỗ trợ thông tin gì? 📚</p></div></div></div>
+            <div class="chatbot-suggestions" id="chatbotSuggestions"><button class="suggestion-btn" data-message="Lịch thi">📅 Lịch thi</button><button class="suggestion-btn" data-message="Học bổng">🎓 Học bổng</button></div>
+            <form class="chatbot-input" id="chatbotForm"><input type="text" placeholder="Nhập câu hỏi..." id="chatbotInput" autocomplete="off"><button type="submit"><i class="fas fa-paper-plane"></i></button></form>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox"><button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button><img src="" alt="" class="lightbox-img" id="lightboxImg"></div>
+    <div class="page-transition" id="pageTransition"><div class="transition-logo"><i class="fas fa-graduation-cap"></i></div></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { loadNewsPage(); });</script>
+</body>
+</html>

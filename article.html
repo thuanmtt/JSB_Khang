@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Bài Viết - EduNews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-top"><div class="container"><div class="header-top-left"><span><i class="fas fa-phone"></i> 1900 1234</span></div></div></div>
+        <div class="header-main">
+            <div class="container">
+                <a href="index.html" class="logo"><i class="fas fa-graduation-cap"></i><div class="logo-text"><span class="logo-name">Edu<strong>News</strong></span><span class="logo-slogan">Khoa CNTT</span></div></a>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Trang Chủ</a></li>
+                        <li class="nav-item"><a href="tintuc.html" class="nav-link"><i class="fas fa-newspaper"></i> Tin Tức</a></li>
+                        <li class="nav-item"><a href="dao-tao.html" class="nav-link"><i class="fas fa-book"></i> Đào Tạo</a></li>
+                        <li class="nav-item"><a href="nghien-cuu.html" class="nav-link"><i class="fas fa-flask"></i> Nghiên Cứu</a></li>
+                        <li class="nav-item"><a href="admin.html" class="nav-link"><i class="fas fa-cog"></i> Quản Lý</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+                    <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn"><span></span><span></span><span></span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="article-header">
+        <div class="container">
+            <nav class="breadcrumb"><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a><span>/</span><a href="tintuc.html">Tin Tức</a><span>/</span><span id="articleCatName">Chi tiết</span></nav>
+            <span class="article-category" id="articleCat"><i class="fas fa-folder"></i> Tin Tức</span>
+            <h1 class="article-title" id="articleTitle">Tiêu đề bài viết</h1>
+            <p class="article-excerpt" id="articleExcerpt">Mô tả ngắn bài viết</p>
+            <div class="article-meta">
+                <span id="articleDate"><i class="fas fa-calendar"></i> 01/02/2026</span>
+                <span id="articleViews"><i class="fas fa-eye"></i> 0 lượt xem</span>
+                <span id="articleAuthor"><i class="fas fa-user"></i> Admin</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="main article-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-body">
+                    <div class="article-featured-image" id="articleImage">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200" alt="Featured">
+                        <button class="image-overlay"><i class="fas fa-expand"></i> Phóng to</button>
+                    </div>
+                    <div class="article-content" id="articleContent">
+                        <p>Nội dung bài viết...</p>
+                    </div>
+                    <div class="article-tags" id="articleTags"></div>
+                    <div class="article-share">
+                        <span>Chia sẻ:</span>
+                        <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <button class="share-btn copy" onclick="copyLink()"><i class="fas fa-link"></i></button>
+                    </div>
+                </article>
+                <aside class="article-sidebar">
+                    <div class="sidebar-card">
+                        <h3><i class="fas fa-newspaper"></i> Bài Viết Liên Quan</h3>
+                        <div class="related-articles" id="relatedArticles"></div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h3><i class="fas fa-fire"></i> Tin Xem Nhiều</h3>
+                        <div class="popular-articles" id="popularArticles"></div>
+                    </div>
+                </aside>
+            </div>
+            <section class="comments-section">
+                <h3><i class="fas fa-comments"></i> Bình Luận (<span id="commentsCount">0</span>)</h3>
+                <form class="comment-form" id="commentForm">
+                    <div class="form-row">
+                        <input type="text" placeholder="Họ tên" required>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <textarea placeholder="Viết bình luận của bạn..." rows="4" required></textarea>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Gửi Bình Luận</button>
+                </form>
+                <div class="comments-list" id="commentsList"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 EduNews - Khoa CNTT. By JSB_Khang</p></div></div></footer>
+
+    <div class="chatbot-container" id="chatbot">
+        <button class="chatbot-toggle" id="chatbotToggle"><i class="fas fa-robot"></i><span class="chatbot-pulse"></span></button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header"><div class="chatbot-avatar"><i class="fas fa-robot"></i></div><div class="chatbot-info"><h4>EduBot AI</h4><span class="chatbot-status"><i class="fas fa-circle"></i> Online</span></div><button class="chatbot-close" id="chatbotClose"><i class="fas fa-times"></i></button></div>
+            <div class="chatbot-messages" id="chatbotMessages"><div class="chat-message bot"><div class="message-content"><p>Bạn cần hỗ trợ gì? 📚</p></div></div></div>
+            <form class="chatbot-input" id="chatbotForm"><input type="text" placeholder="Nhập câu hỏi..." id="chatbotInput"><button type="submit"><i class="fas fa-paper-plane"></i></button></form>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+        <img src="" alt="" class="lightbox-img" id="lightboxImg">
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { loadArticlePage(); });</script>
+</body>
+</html>
